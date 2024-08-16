@@ -21,11 +21,7 @@ app.use(morgan('dev'))
 
 app.use('/api/v1/user', userRoute);
 app.use('/api/v1/blog', blogRoute)
-app.get('/', (req, res)=>{
-    res.status(200).send({
-        "message":"Node server"
-    })
-})
+
 
 app.use(express.static(path.join(__dirname,'./client/build')))
 app.get('*', function(req,res){
